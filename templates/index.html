@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hate Speech Detector</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+
+<body>
+    <div class="app">
+        <div class="section" style="text-align: center; background-color: rgb(255, 255, 255); height: max-content;">
+            <h1>Hate Speech Detector</h1>
+        </div>
+        <div class="container">
+            <div class="section one">
+                <form action="/predict" method="post">
+                    <textarea name="text" rows="4" cols="50" placeholder="Enter hate speech text..."></textarea><br>
+                    <button type="submit">Predict</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

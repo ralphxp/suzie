@@ -15,9 +15,20 @@
         </div>
         <div class="container">
             <div class="section one">
-                <h2>Prediction Result</h2>
-                <p><strong>Input Text:</strong> {{ text }}</p>
-                <p><strong>Prediction:</strong> {{ prediction }}</p>
+                <div class="r-head">
+                   <h2>Prediction Result</h2>
+                </div>
+                
+                <div class="r-body">
+                    <p><strong>Input Text:</strong></p>
+                    <p>{{ text }}</p>
+
+                    <p><strong>Rating:</strong> {{ prediction }}</p>
+                    <p><strong>Prediction:</strong> {{ hatespeech }}</p>
+                </div>
+
+                <button onclick="window.location='/'">Back to Home</button>
+                
             </div>
         </div>
 

@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load the trained model and TF-IDF vectorizer
 model = joblib.load('model.joblib')
 tfidf_vectorizer = joblib.load('tfidf_vectorizer.joblib')
-model.eval()
+# model.eval()
 
 @app.route('/')
 def home():
@@ -21,7 +21,10 @@ def predict():
     text = request.form['text']
     tfidf_text = tfidf_vectorizer.transform([text])
     prediction = model.predict(tfidf_text)[0]
-    return render_template('result.html', prediction=prediction, text=text)
+    hatespeech = "Not Hate Speech"
+    if prediction < 1.0:
+        hatespeech = "Hate Speech Detected"
+    return render_template('result.html', prediction=prediction, text=text, hatespeech=hatespeech)
 
 
 if __name__ == '__main__':

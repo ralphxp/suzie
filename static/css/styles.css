@@ -50,6 +50,19 @@ textarea:focus-visible{
     border:none
 }
 
+.r-head{
+    padding: 10px;
+}
+
+.r-body{
+    padding: 10px;
+    min-width: 320px;
+}
+
+.r-body p{
+    padding: 10px;
+}
+
 @media screen and (max-width: 720px)
 {
     .container{

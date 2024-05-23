@@ -10,13 +10,13 @@ from sklearn.metrics import classification_report
 import joblib
 
 # Load dataset
-data = pd.read_csv('hate_speech_dataset.csv')
+data = pd.read_csv('labeled_data.csv')
 
 # Preprocess data
 # (You need to implement data preprocessing steps here)
 
 # Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(data['text'], data['label'], test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(data['tweet'], data['hate_speech'], test_size=0.2, random_state=42)
 pipeline = Pipeline([
     ('tfidf', TfidfVectorizer()),
     ('clf', RandomForestClassifier(random_state=42))
